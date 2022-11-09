@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MusicShopModelContainer" CdmEntityContainer="MusicShopEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="MusicShopModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="IdCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="Name" ColumnName="name" />
+          <ScalarProperty Name="IdMainCategory" ColumnName="idMainCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="MusicShopModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="IdManufacturer" ColumnName="idManufacturer" />
+          <ScalarProperty Name="Name" ColumnName="name" />
+          <ScalarProperty Name="Country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="MusicShopModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="IdOrder" ColumnName="idOrder" />
+          <ScalarProperty Name="IdUser" ColumnName="idUser" />
+          <ScalarProperty Name="OrderDate" ColumnName="orderDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="deliveryAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="MusicShopModel.ProductImage">
+        <MappingFragment StoreEntitySet="ProductImage">
+          <ScalarProperty Name="IdImage" ColumnName="idImage" />
+          <ScalarProperty Name="IdProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="Image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="MusicShopModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleName" ColumnName="roleName" />
+          <ScalarProperty Name="IdRole" ColumnName="idRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MusicShopModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="Name" ColumnName="name" />
+          <ScalarProperty Name="Surname" ColumnName="surname" />
+          <ScalarProperty Name="Phone" ColumnName="phone" />
+          <ScalarProperty Name="IdRole" ColumnName="idRole" />
+          <ScalarProperty Name="Password" ColumnName="password" />
+          <ScalarProperty Name="Login" ColumnName="login" />
+          <ScalarProperty Name="IdUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="MusicShopModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Quantity" ColumnName="quantity" />
+          <ScalarProperty Name="IdUser" ColumnName="idUser" />
+          <ScalarProperty Name="IdProduct" ColumnName="idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderProducts">
+      <EntityTypeMapping TypeName="MusicShopModel.OrderProduct">
+        <MappingFragment StoreEntitySet="OrderProduct">
+          <ScalarProperty Name="Quantity" ColumnName="quantity" />
+          <ScalarProperty Name="IdOrder" ColumnName="idOrder" />
+          <ScalarProperty Name="IdProduct" ColumnName="idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CreateOrderFromCart" FunctionName="Хранилище MusicShopModel.CreateOrderFromCart" />
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="MusicShopModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="Rating" ColumnName="rating" />
+          <ScalarProperty Name="IdUser" ColumnName="idUser" />
+          <ScalarProperty Name="IdProduct" ColumnName="idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderViews">
+      <EntityTypeMapping TypeName="MusicShopModel.OrderView">
+        <MappingFragment StoreEntitySet="OrderView">
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="deliveryAddress" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="OrderDate" ColumnName="orderDate" />
+          <ScalarProperty Name="Phone" ColumnName="phone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IdOrder" ColumnName="idOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="MusicShopModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Description" ColumnName="description" />
+          <ScalarProperty Name="Price" ColumnName="price" />
+          <ScalarProperty Name="Name" ColumnName="name" />
+          <ScalarProperty Name="IdCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="IdManufacturer" ColumnName="idManufacturer" />
+          <ScalarProperty Name="IdProduct" ColumnName="idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

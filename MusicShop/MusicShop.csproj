@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C302C11-62FA-4B98-9212-09684AD2B03C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MusicShop</RootNamespace>
+    <AssemblyName>MusicShop</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainModel\Cart.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Cart\CartModel.cs" />
+    <Compile Include="DomainModel\Cart\ICartModel.cs" />
+    <Compile Include="DomainModel\Catalog\CatalogModel.cs" />
+    <Compile Include="DomainModel\Catalog\ICatalogModel.cs" />
+    <Compile Include="DomainModel\Category.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Comment.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Connection.cs" />
+    <Compile Include="DomainModel\Core.cs" />
+    <Compile Include="DomainModel\EditCategory\EditCategoryModel.cs" />
+    <Compile Include="DomainModel\EditCategory\IEditCategoryModel.cs" />
+    <Compile Include="DomainModel\EditManufacturer\EditManufacturerModel.cs" />
+    <Compile Include="DomainModel\EditManufacturer\IEditManufacturerModel.cs" />
+    <Compile Include="DomainModel\EditProduct\EditProductModel.cs" />
+    <Compile Include="DomainModel\EditProduct\IEditProductModel.cs" />
+    <Compile Include="DomainModel\ExtendedEntities\UserExtended.cs" />
+    <Compile Include="DomainModel\Login\ILoginModel.cs" />
+    <Compile Include="DomainModel\Login\LoginModel.cs" />
+    <Compile Include="DomainModel\ExtendedEntities\ProductExtended.cs" />
+    <Compile Include="DomainModel\Orders\IOrdersModel.cs" />
+    <Compile Include="DomainModel\Orders\OrdersModel.cs" />
+    <Compile Include="DomainModel\OrderView.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Order\IOrderModel.cs" />
+    <Compile Include="DomainModel\Order\OrderModel.cs" />
+    <Compile Include="DomainModel\Product\IProductModel.cs" />
+    <Compile Include="DomainModel\Product\ProductModel.cs" />
+    <Compile Include="DomainModel\Users\IUserModel.cs" />
+    <Compile Include="DomainModel\Users\UserModel.cs" />
+    <Compile Include="DomainModel\Manufacturer.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\MusicShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\MusicShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\MusicShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Order.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\OrderProduct.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Product.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\ProductImage.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Role.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\User.cs">
+      <DependentUpon>MusicShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BlinkButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BlinkButton.Designer.cs">
+      <DependentUpon>BlinkButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\Common\IPresenter.cs" />
+    <Compile Include="Presentations\Common\IView.cs" />
+    <Compile Include="Presentations\Presenters\ConnectionPresenter.cs" />
+    <Compile Include="Presentations\Presenters\OrderPresenter.cs" />
+    <Compile Include="Presentations\Presenters\ChoiceCategoryPresenter.cs" />
+    <Compile Include="Presentations\Presenters\CustomerOrdersPresenter.cs" />
+    <Compile Include="Presentations\Presenters\EditCategoryPresenter.cs" />
+    <Compile Include="Presentations\Presenters\EditManufacturerPresenter.cs" />
+    <Compile Include="Presentations\Presenters\EditProductPresenter.cs" />
+    <Compile Include="Presentations\Presenters\CartPresenter.cs" />
+    <Compile Include="Presentations\Presenters\CatalogPresenter.cs" />
+    <Compile Include="Presentations\Presenters\CategoriesPresenter.cs" />
+    <Compile Include="Presentations\Presenters\LoginPresenter.cs" />
+    <Compile Include="Presentations\Presenters\ManufacturersPresenter.cs" />
+    <Compile Include="Presentations\Presenters\OrdersPresenter.cs" />
+    <Compile Include="Presentations\Presenters\ProductPresenter.cs" />
+    <Compile Include="Presentations\Presenters\EditUserPresenter.cs" />
+    <Compile Include="Presentations\Presenters\StatisticPresenter.cs" />
+    <Compile Include="Presentations\Presenters\UsersPresenter.cs" />
+    <Compile Include="Presentations\Views\ICategoriesView.cs" />
+    <Compile Include="Presentations\Views\IChoiceCategoryView.cs" />
+    <Compile Include="Presentations\Views\IConnectionView.cs" />
+    <Compile Include="Presentations\Views\ICustomerOrdersView.cs" />
+    <Compile Include="Presentations\Views\IEditCategoryView.cs" />
+    <Compile Include="Presentations\Views\IEditManufacturerView.cs" />
+    <Compile Include="Presentations\Views\IEditProductView.cs" />
+    <Compile Include="Presentations\Views\ICartView.cs" />
+    <Compile Include="Presentations\Views\ICatalogView.cs" />
+    <Compile Include="Presentations\Views\ILoginView.cs" />
+    <Compile Include="Presentations\Views\IManufacturerView.cs" />
+    <Compile Include="Presentations\Views\IOrdersView.cs" />
+    <Compile Include="Presentations\Views\IOrderView.cs" />
+    <Compile Include="Presentations\Views\IProductView.cs" />
+    <Compile Include="Presentations\Views\IRegistrationView.cs" />
+    <Compile Include="Presentations\Views\IStatisticView.cs" />
+    <Compile Include="Presentations\Views\IUsersView.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChoiceCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChoiceCategoryForm.Designer.cs">
+      <DependentUpon>ChoiceCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConnectionForm.Designer.cs">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerOrdersForm.Designer.cs">
+      <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditCategoryForm.Designer.cs">
+      <DependentUpon>EditCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditManufacturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditManufacturerForm.Designer.cs">
+      <DependentUpon>EditManufacturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditProductForm.Designer.cs">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CartForm.Designer.cs">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CatalogForm.designer.cs">
+      <DependentUpon>CatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Manager.cs" />
+    <Compile Include="UI\ManufacturersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManufacturersForm.Designer.cs">
+      <DependentUpon>ManufacturersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProductForm.designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditUserForm.designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StyleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StyleForm.Designer.cs">
+      <DependentUpon>StyleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChoiceCategoryForm.resx">
+      <DependentUpon>ChoiceCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ConnectionForm.resx">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerOrdersForm.resx">
+      <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditCategoryForm.resx">
+      <DependentUpon>EditCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditManufacturerForm.resx">
+      <DependentUpon>EditManufacturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditProductForm.resx">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CartForm.resx">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CatalogForm.resx">
+      <DependentUpon>CatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManufacturersForm.resx">
+      <DependentUpon>ManufacturersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OrdersForm.resx">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StyleForm.resx">
+      <DependentUpon>StyleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DomainModel\MusicShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MusicShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DomainModel\MusicShopModel.edmx.diagram">
+      <DependentUpon>MusicShopModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DomainModel\MusicShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MusicShopModel.Context.cs</LastGenOutput>
+      <DependentUpon>MusicShopModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DomainModel\MusicShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusicShopModel.edmx</DependentUpon>
+      <LastGenOutput>MusicShopModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\users.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\add.png" />
+    <Content Include="Resources\arrow.ico" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\bar-chart.png" />
+    <Content Include="Resources\catalog.ico" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\firstPage.png" />
+    <None Include="Resources\lastPage.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\factory.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\doc.png" />
+    <None Include="Resources\connection.png" />
+    <Content Include="Resources\left.png" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
